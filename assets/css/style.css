@@ -1,0 +1,298 @@
+/* Base Styles */
+:root {
+  --primary: #2d2d2d;       /* Dark gray */
+  --secondary: #f8f8f8;     /* Light gray */
+  --accent: #6e07f3;       /* Purple (modern accent) */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary) 0%, #ffffff 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.hero-social {
+  margin-top: 2rem;
+}
+
+.hero-social a {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.hero-social a:hover {
+  color: var(--accent);
+}
+
+/* Projects Section */
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem;
+}
+
+.project-card p {
+  margin: 0 1rem 1rem;
+  color: #666;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin: 1rem;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust min width as needed */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4/5; /* Enforces 4:5 ratio */
+  object-fit: cover; /* Crops images to fit */
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo Card Styling */
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4/5;
+  transition: transform 0.3s;
+}
+
+.photo-card:hover {
+  transform: scale(1.02);
+}
+
+.photo-link {
+  display: block;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Photo Info Overlay */
+.photo-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1.5rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.photo-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.photo-info p {
+  margin: 0.3rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.photo-info .fa-instagram {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Hover Effects */
+.photo-card:hover .photo-info {
+  transform: translateY(0);
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Certificates Section */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.certificate-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+}
+
+.certificate-preview {
+  position: relative;
+  height: 250px;
+  background: #f5f5f5;
+}
+
+.certificate-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.certificate-preview:hover .certificate-overlay {
+  opacity: 1;
+}
+
+.download-btn {
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certificate-info {
+  padding: 1.5rem;
+}
+
+.certificate-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.certificate-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.certificate-id a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.issuer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+}
